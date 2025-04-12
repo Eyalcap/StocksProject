@@ -11,8 +11,8 @@ import scrapy
 from businside.items import BusinsideItem
 
 def getCleanStartUrlList(filename):
-    myfile = open(filename, "r")
-    urls = myfile.readlines()
+    with open(filename, "r") as myfile:
+        urls = myfile.readlines()
     #print 'ok1'
     first = [url.strip() for url in urls]
     #print len(first)    
