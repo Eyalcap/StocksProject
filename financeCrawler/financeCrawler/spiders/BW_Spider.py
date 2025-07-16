@@ -10,8 +10,8 @@ import scrapy
 from financeCrawler.items import FinancecrawlerItem
 
 def getCleanStartUrlList(filename):
-    myfile = open(filename, "r")
-    urls = myfile.readlines()
+    with open(filename, "r") as myfile:
+        urls = myfile.readlines()
     return [url.strip() for url in urls]
     
     
